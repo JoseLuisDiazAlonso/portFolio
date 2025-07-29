@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Sidebar from "./components/sideBar";
+import SobreMi from "./components/sobreMi";
 import FloatingSocialIcons from "./components/FloatingSocialIcons";
 
 
@@ -71,19 +72,7 @@ function App() {
       {/**Secciones para Navegación */}
       <div className="flex flex-col text-center item-center">
         <section id="sobre-mi" className="h-screen p-10">
-          <h2 className="text-2xl font-bold drop-shadow-lg">SOBRE MI</h2>
-        </section>
-        <section id="herramientas" className="h-screen p-10 drop-shadow-lg">
-          <h2 className="text-2xl font-bold">HERRAMIENTAS</h2>
-        </section>
-        <section id="proyectos" className="h-screen p-10 drop-shadow-lg">
-          <h2 className="text-2xl font-bold">PROYECTOS</h2>
-        </section>
-        <section id="formacion" className="h-screen p-10 drop-shadow-lg">
-          <h2 className="text-2xl font-bold">FORMACIÓN</h2>
-        </section>
-        <section id="contacto" className="h-screen p-10 drop-shadow-lg">
-          <h2 className="text-2xl font-bold">CONTACTO</h2>
+          <SobreMi/>
         </section>
         <section>
            <FloatingSocialIcons/>

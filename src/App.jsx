@@ -4,40 +4,27 @@ import Sidebar from "./components/sideBar";
 import SobreMi from "./components/sobreMi";
 import FloatingSocialIcons from "./components/FloatingSocialIcons";
 
-
 function App() {
-  {
-    /**Estado del idioma */
-  }
   const [language, setLanguage] = useState("es");
+  const [isOpen, setIsOpen] = useState(false);
 
-  {
-    /**Lógica para el Menú */
-  }
   const handleNavigate = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: "somooth" });
+      section.scrollIntoView({ behavior: "smooth" });
     }
+    setIsOpen(false);
   };
 
-  {
-    /**Lógica para cambiar el idioma */
-  }
   const handleToggleLanguage = () => {
     setLanguage((prev) => (prev === "es" ? "en" : "es"));
   };
 
-  {
-    /**Textos por idioma */
-  }
   const texts = {
     es: {
       nombre: "JOSE LUIS DÍAZ ALONSO",
-      descripcion:
-        "Apasionado por el desarrollo de experiencias web intuitivas",
+      descripcion: "Apasionado por el desarrollo de experiencias web intuitivas",
     },
-
     en: {
       nombre: "JOSE LUIS DÍAZ ALONSO",
       descripcion: "Passionate about developing intuitive web experiences",
@@ -45,21 +32,30 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen font-sans text-white bg-center bg-cover bg-backgroundPrincipal">
-      {/**Sidebar Lateral Derecho */}
+    <div className="flex flex-col items-center w-full min-h-full font-sans text-white bg-fixed bg-center bg-cover bg-backgroundPrincipal">
+      {/* Botón menú */}
+      <button
+        onClick={() => setIsOpen(true)}
+        className="fixed z-50 p-3 rounded-lg shadow-lg bg-white/10 top-4 right-4 hover:bg-blue-600"
+      >
+        Menu
+      </button>
+
+      {/* Sidebar */}
       <Sidebar
+        isOpen={isOpen}
+        onClose={() => setIsOpen(false)}
         onNavigate={handleNavigate}
         onToggleLanguage={handleToggleLanguage}
       />
-      {/*Contenedor del recuadro transparente */}
-      <div className="relative flex flex-col items-center p-8 shadow-2xl rounded-2xl bg-white/10 backdrop-blur-lg top-[30px]">
-        {/*Imagen dentro del recuadro */}
+
+      {/* Bloque principal */}
+      <div className="relative flex flex-col items-center p-8 shadow-2xl rounded-2xl bg-white/10 backdrop-blur-lg mt-[30px]">
         <img
           src="/public/media/ImagenPrincipal.png"
           alt="Foto futurista"
           className="object-cover rounded-full shadow-xl w-[350px] h-[350px]"
         />
-        {/*Texto debajo de la imagen, dentro del mismo recuadro */}
         <div className="flex flex-col items-center gap-4 mt-6 text-center">
           <h1 className="text-[30px] font-bold text-white drop-shadow-lg">
             {texts[language].nombre}
@@ -69,13 +65,14 @@ function App() {
           </p>
         </div>
       </div>
-      {/**Secciones para Navegación */}
-      <div className="flex flex-col text-center item-center">
-        <section id="sobre-mi" className="h-screen p-10">
-          <SobreMi/>
+
+      {/* Secciones */}
+      <div className="flex flex-col w-full text-center item-center">
+        <section id="sobre-mi" className="p-10">
+          <SobreMi language={language} />
         </section>
         <section>
-           <FloatingSocialIcons/>
+          <FloatingSocialIcons />
         </section>
       </div>
     </div>

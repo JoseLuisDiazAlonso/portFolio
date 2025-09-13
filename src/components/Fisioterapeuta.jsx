@@ -62,14 +62,14 @@ const Fisioterapeuta = ({lang, toggleLanguage}) => {
 </div>
 {/**Video con Controles **/}
     <div className="flex flex-col items-center">
-        <video  className="w-full max-w-4xl mb-8 rounded-lg shadow-lg" src="/public/videos/Fisioterapeuta.mp4" controls autoPlay loop muted/>
+        <video  className="object-contain w-full max-w-4xl mb-8 rounded-lg shadow-lg" src="/public/videos/Fisioterapeuta.mp4" controls autoPlay loop muted/>
     </div>
     {/* Contenido dividido en aside + texto */}
     <div className='grid grid-cols-1 gap-8 mt-8 lg:grid-cols-3'>
          {/* Aside → arriba en móvil, izquierda en escritorio */}
         <aside className='order-1 p-4 text-gray-800 bg-gray-100 shadow-md rounded-xl lg:order-none'>
             <div className='space-y-4'></div>
-                <h3 className='text-xl font-bold'>{lang === "es" ? "Tecnologías utilizadas" : "Used Technologies"}</h3>
+                <h3 className='text-xl font-bold'>{lang === "es" ? "Tecnologías Utilizadas" : "Used Technologies"}</h3>
                 <ul className='text-gray-700 list-disc list-inside'>
                     <li>HTML5</li>
                     <li>CSS3</li>

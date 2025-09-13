@@ -68,7 +68,7 @@ const Atreva = ({lang, toggleLanguage}) => {
         <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-3">
             <aside className='order-1 p-4 text-gray-800 bg-gray-100 shadow-md rounded-xl lg:order-none'>
                 <div className='space-y-4'>
-                    <h3 className='text-xl font-bold'>{lang === "es" ? "Tecnologías Usadas" : "Used Technologies"}</h3>
+                    <h3 className='text-xl font-bold'>{lang === "es" ? "Tecnologías Utilizadas" : "Used Technologies"}</h3>
                     <ul className='text-gray-700 list-disc list-inside'>
                         <li>React</li>
                         <li>JavaScript</li>
@@ -78,7 +78,7 @@ const Atreva = ({lang, toggleLanguage}) => {
                         <li>MySql</li>
                     </ul>
                     <h3 className='text-xl font-bold'>{lang === "es" ? "Categoría" : "Category"}</h3>
-                    <p className='text-gray-700'>Web Application</p>
+                    <p className='text-gray-700'>App</p>
                 </div>
             </aside>
             <div className='lg:col-span-2'>

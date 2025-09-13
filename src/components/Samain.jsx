@@ -51,9 +51,6 @@ const Samain = ({lang, toggleLanguage}) => {
       <div className="relative grid items-center grid-cols-3 mb-8">
   <div></div>
 
-  {/* Hacemos que el h2 no capture clicks */}
-  <h2 className="text-2xl font-bold text-center pointer-events-none">SAMAIN</h2>
-
   <div className="flex justify-end pr-8">
     <button
       type="button"
@@ -68,7 +65,7 @@ const Samain = ({lang, toggleLanguage}) => {
   
       {/**Video con Controles */}
       <div className='mb-8'>
-        <video className='w-full h-[500px] object-cover rounded-xl shadow-lg' src='/public/videos/Samain.mp4' controls autoPlay loop muted/>
+        <video className='w-full h-[500px] object-contain rounded-xl shadow-lg' src='/public/videos/Samain.mp4' controls autoPlay loop muted/>
       </div>
 
       {/* Contenido dividido en aside + texto */}
@@ -77,7 +74,7 @@ const Samain = ({lang, toggleLanguage}) => {
         {/* Aside → arriba en móvil, izquierda en escritorio */}
         <aside className="order-1 p-4 text-gray-800 bg-gray-100 shadow-md rounded-xl lg:order-none">
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">{lang === "es" ? "Tecnologías utilizadas" : "Used Technologies"}</h3>
+            <h3 className="text-xl font-bold">{lang === "es" ? "Tecnologías Utilizadas" : "Used Technologies"}</h3>
             <ul className="text-gray-700 list-disc list-inside">
               <li>HTML5</li>
               <li>CSS3</li>

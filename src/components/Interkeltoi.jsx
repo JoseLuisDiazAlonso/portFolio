@@ -27,7 +27,7 @@ const Interkeltoi = ({lang, toggleLanguage}) => {
                 <p className='mb-4'>
                     Interkeltoi is a website driven by the Asociación Cultural Tierraquemada with the purpose of building bridges between communities that share a common heritage: Celtic culture. 
                     A living space where tradition, history, and connections come together to strengthen common identity and bring closer the peoples who share these ancestral roots.
-                    </p>
+                 </p>
                     <p className='mb-4'>
                     The website consists of:
                     <ul className='list-disc list-inside'>
@@ -70,7 +70,7 @@ const Interkeltoi = ({lang, toggleLanguage}) => {
 
         {/**Video con Controles */}
         <div className='mb-8'>
-            <video className='w-full h-[500px] object-cover rounded-xl shadow-lg' src='/public/videos/Interkeltoi.mp4' controls autoPlay loop muted/>
+            <video className='w-full h-[500px] object-contain rounded-xl shadow-lg' src='/public/videos/Interkeltoi.mp4' controls autoPlay loop muted/>
         </div>
 
         {/* Contenido dividido en aside + texto */}
@@ -78,7 +78,7 @@ const Interkeltoi = ({lang, toggleLanguage}) => {
             {/* Aside → arriba en móvil, izquierda en escritorio */}
             <aside className='order-1 p-4 text-gray-800 bg-gray-100 shadow-md rounded-xl lg:order-none'>
                 <div className='space-y-4'>
-                    <h3 className='text-xl font-bold'>{lang === "es" ? "Tecnologías utilizadas" : "Used Technologies"}</h3>
+                    <h3 className='text-xl font-bold'>{lang === "es" ? "Tecnologías Utilizadas" : "Used Technologies"}</h3>
                     <ul className='text-gray-700 list-disc list-inside'>
                         <li>HTML5</li>
                         <li>CSS3</li>

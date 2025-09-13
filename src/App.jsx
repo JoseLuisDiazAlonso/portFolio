@@ -12,6 +12,14 @@ import Samain from './components/Samain';
 import Interkeltoi from "./components/Interkeltoi";
 import Fisioterapeuta from "./components/Fisioterapeuta";
 import Atreva from "./components/Atreva";
+import Juego from "./components/Juego";
+import Senpai from "./components/Senpai";
+import SenorAnillos from "./components/SenorAnillos";
+import ScrollTopButton from "./components/ScrollTopButton";
+import AvisoLegal from "./components/AvisoLegal";
+import PoliticaPrivacidad from "./components/PoliticaPrivacidad";
+import Cookies from "./components/PoliticaPrivacidad";
+import Footer from "./components/Footer";
 
 //Creamos un hook que haga scroll a la sección correcta
 function ScrollToSection() {
@@ -44,9 +52,9 @@ function Home () {
       <SobreMi lang={lang}/>
       <Herramientas lang={lang}/>
       <Proyectos lang={lang}/>
-      <Formacion/>
-      <Contacto/>
-      <Blog/>
+      <Formacion lang={lang}/>
+      <Contacto lang={lang}/>
+      <Blog lang={lang}/>
       </div>
       
     </div>
@@ -72,7 +80,16 @@ function App() {
           <Route path="/Interkeltoi" element={<Interkeltoi lang={lang} toggleLanguage={toggleLanguage}/>}/>
           <Route path="/Fisioterapeuta" element={<Fisioterapeuta lang={lang} toggleLanguage={toggleLanguage}/>}/>
           <Route path= "/Atreva" element={<Atreva lang={lang} toggleLanguage={toggleLanguage}/>}/>
+          <Route path="/Juego" element={<Juego lang={lang} toggleLanguage={toggleLanguage}/>}/>
+          <Route path="/Senpai" element={<Senpai lang={lang} toggleLanguage={toggleLanguage}/>}/>
+          <Route path="/SenorAnillos" element={<SenorAnillos lang={lang} toggleLanguage={toggleLanguage}/>}/>
+          {/**Rutas de Menú Legal */}
+          <Route path="/avisoLegal" element={<AvisoLegal lang={lang} toggleLanguage={toggleLanguage}/>}/>
+          <Route path="/politicaPrivacidad" element={<PoliticaPrivacidad lang={lang} toggleLanguage={toggleLanguage}/>}/>
+          <Route path="/cookies" element={<Cookies lang={lang} toggleLanguage={toggleLanguage}/>}/>
         </Routes>
+        <ScrollTopButton/>
+        <Footer/>
       </BrowserRouter>
     </div>
       

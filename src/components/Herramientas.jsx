@@ -2,7 +2,6 @@ import React from 'react';
 import { FaJava, FaJsSquare, FaHtml5, FaReact, FaNodeJs, FaCss3Alt, FaGitAlt, FaBootstrap, FaCode } from 'react-icons/fa';
 import { SiTailwindcss, SiMysql, SiExpress, SiAndroidstudio, SiEclipseide, SiGithub } from 'react-icons/si';
 
-// Traducciones
 const traducciones = {
   es: {
     titulo: "HERRAMIENTAS",
@@ -40,7 +39,6 @@ const traducciones = {
   }
 };
 
-// Array de herramientas
 const Tools = [
   { id: 1, tipo: 'Lenguaje', icono: <FaJava className='w-10 h-10 text-blue-600'/>, level: '90%' },
   { id: 2, tipo: 'Lenguaje', icono: <FaJsSquare className='w-10 h-10 text-yellow-400'/>, level: '80%' },
@@ -60,41 +58,32 @@ const Tools = [
 ];
 
 const Herramientas = ({ lang = "es"}) => {
-  // Aseguramos que siempre exista un idioma
- const traduccion = traducciones[lang] || traducciones['es'];
+  const traduccion = traducciones[lang] || traducciones['es'];
   const { titulo, nivel, tipos, nombres } = traduccion;
-  // Logs para depuración
-  console.log("Lang recibido:", lang);
-  console.log(" Traducciones cargadas:", titulo, nivel);
-  console.log("Nombres:", nombres.length, "Tools:", Tools.length);
 
   return (
-    <div id='herramientas' className='w-full max-w-5xl p-8 text-white bg-gray-800 rounded-2xl shadow-log'>
+    <section id='tools' className='w-full max-w-full p-8 overflow-x-hidden text-white bg-gray-800 rounded-2xl shadow-log'>
       <h2 className='mb-6 text-4xl font-bold text-center text-shadow-lg'>{titulo}</h2>
       <div className='grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {Tools.map((tool, index) => (
-          <div key={tool.id} className='p-4 transition-colors duration-300 rounded-lg shadow-md bg-white/10 hover:bg-white/20'>
+          <div key={tool.id} className='p-4 break-words transition-colors duration-300 rounded-lg shadow-md bg-white/10 hover:bg-white/20'>
             <div className='flex flex-col items-center'>
               {tool.icono}
-              {/* Nombre con fallback */}
-              <h3 className='mt-2 text-xl font-semibold'>
+              <h3 className='mt-2 text-xl font-semibold text-center truncate'>
                 {nombres[index] || `Tool ${tool.id}`}
               </h3>
-              {/* Tipo con fallback */}
-              <p className='text-sm text-gray-300'>
+              <p className='text-sm text-gray-300 truncate'>
                 {tipos[tool.tipo] || tool.tipo}
               </p>
-              {/* Barra de nivel */}
               <div className='w-full h-4 mt-2 bg-gray-700 rounded-full'>
                 <div className='h-4 bg-blue-500 rounded-full' style={{ width: tool.level }}></div>
               </div>
-              {/* Texto nivel */}
               <span className='mt-1 text-sm'>{tool.level} {nivel}</span>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

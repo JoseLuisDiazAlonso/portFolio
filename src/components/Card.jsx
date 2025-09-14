@@ -1,21 +1,31 @@
-import React from 'react'
+import React from 'react';
 
-const Card = ({image, title, link, description}) => {
-    const handleClick = () => {
-        window.open(link, '_blank'); //Abre el enlace en una nueva pestaña
-    };
+const Card = ({ image, title, link, description }) => {
+  const handleClick = () => {
+    if (link) {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
-    <div onClick={handleClick} className='max-w-sm p-4 text-center transition-transform duration-300 bg-white rounded-lg shadow-lg cursor-pointer hover:scale-105'>
-        <img src={image} alt={title} className='object-cover w-full h-48 mb-4 rounded-lg'/>
-        <h3 className='text-xl font-bold text-center text-gray-700'>{title}</h3>
-        <div className='p-4 mt-[5px]'>
-            {description && (
-                <p className='mt-2 text-gray-600'>{description}</p>
-            )}
-        </div>
-      
+    <div
+      onClick={handleClick}
+      className="w-full max-w-sm p-4 text-center transition-transform duration-300 bg-white shadow-lg cursor-pointer rounded-xl hover:scale-105 hover:shadow-2xl"
+      role="button"
+      tabIndex={0}
+      onKeyPress={(e) => e.key === 'Enter' && handleClick()}
+    >
+      <img
+        src={image}
+        alt={title}
+        className="object-cover w-full h-48 mb-4 sm:h-56 md:h-64 rounded-xl"
+      />
+      <h3 className="text-xl font-bold text-gray-700">{title}</h3>
+      {description && (
+        <p className="mt-2 text-sm text-gray-600 sm:text-base">{description}</p>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

@@ -50,7 +50,7 @@ const Atreva = ({lang, toggleLanguage}) => {
     }
   return (
     <section className='p-8 mx-auto text-white bg-gradient-to-b from-blue-900 via-blue-400 rounded-2xl shadow-log max-w-7xl'>
-        <div className="grid items-center grid-cols-3 mb-8">
+        <div className="flex flex-col items-start justify-start gap-4 mb-8 lg:flex-row lg:justify-between lg:items-center">
     {/* Columna izquierda vacía */}
     <div></div>
     {/* Columna central → título centrado */}

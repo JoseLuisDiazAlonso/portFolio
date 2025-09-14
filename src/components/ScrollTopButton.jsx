@@ -1,16 +1,18 @@
-import React from 'react'
+import React from 'react';
 
 const ScrollTopButton = () => {
-    const scrollToTop = () => {
-        window.scrollTo({top: 0, behavior: "smooth"});
-    };
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <button
-    onClick={scrollToTop}
-    className='fixed z-50 px-1 pb-[60px] text-sm text-red-600 transform rotate-90 bg-transparent bottom-10 right-2 hover:text-blue writing-verticl-rl md:text-base md:px-2'>
+      onClick={scrollToTop}
+      className='fixed bottom-10 right-2 z-50 px-2 py-1 text-sm md:text-base text-red-600 bg-transparent hover:text-blue-600 [writing-mode:vertical-rl] rotate-180'
+    >
       BACK TO TOP
     </button>
-  )
-}
+  );
+};
 
-export default ScrollTopButton
+export default ScrollTopButton;

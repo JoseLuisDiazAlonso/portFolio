@@ -60,7 +60,7 @@ const Formacion = ({lang}) => {
   const description = TRADUCCIONES[lang]?.description || TRADUCCIONES[lang]?.descripcion || '';
 
   return (
-    <div id='formacion' className='w-full max-w-5xl p-8 text-white bg-gradient-to-b from-blue-900 via-sky-400 to-cian-400 rounded-2xl shadow-log'>
+    <div id='education' className='w-full max-w-5xl p-8 text-white bg-gradient-to-b from-blue-900 via-sky-400 to-cian-400 rounded-2xl shadow-log'>
       <h2 className='mb-8 text-2xl font-bold text-center'>{title}</h2>
       <p className='mb-[20px] text-lg'>{description}</p>
       <div className='relative w-3/4'>

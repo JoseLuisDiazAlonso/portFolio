@@ -11,7 +11,7 @@ Mi PortFolio. Su objetivo es mostrar de una manera rápida y visual mi experienc
 ## 🛠 Tecnologías y Herramientas
 
 Este proyecto ha sido desarrollado utilizando un stack moderno de tecnologías que garantizan rendimiento, escalabilidad y una experiencia de usuario atractiva. El frontend está construido con React, lo que permite crear interfaces dinámicas y componentes reutilizables, junto con TailwindCSS para aplicar estilos de manera eficiente y responsiva.
-Para la lógica de negocio y la construcción del backend se emplearon Node.js y Express, asegurando una comunicación rápida y ligera entre cliente y servidor. Finalmente, la persistencia de los datos se gestiona con MySQL, una base de datos relacional robusta y ampliamente utilizada.
+
 
 ## Características del Proyecto
 
